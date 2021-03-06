@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  nexus:
+    image: sonatype/nexus3
+    volumes:
+      - "sonatype-work:/sonatype-work"
+      - "nexus-data:/nexus-data"
+    ports:
+      - "8081:8081"
+      - "5000:5000" # For Docker registry
+  
+volumes:
+  nexus-data: {}
+  sonatype-work: {}
